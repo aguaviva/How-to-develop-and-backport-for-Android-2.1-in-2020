@@ -5,12 +5,19 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.mikel.cleanretroproject"
-        minSdkVersion 9 // Android 2.2 is api 9
-        targetSdkVersion 29
+        minSdkVersion 21 // 21 is the minimum for Camera2
+        targetSdkVersion 21
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+    externalNativeBuild {
+        cmake {
+            //path file('src/main/jni/CMakeLists.txt')
+        }
+    }
+
     buildTypes {
         release {
             shrinkResources true //reduces apk size removing unused code
